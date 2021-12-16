@@ -14,7 +14,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { NextSeo } from 'next-seo';
 import Welcome from '@/components/Welcome';
-import TerminalView from '@/components/AboutTerminal';
+import AboutTerminal from '@/components/AboutTerminal';
 export default function Home(): React.ReactElement {
   const [imageLoad, setImageLoad] = useState(false);
   const bp = useBreakpoint();
@@ -37,16 +37,7 @@ export default function Home(): React.ReactElement {
           p={{ base: 0, sm: 16 }}
         >
           <Welcome />
-        </Flex>
-
-        <Flex
-          direction="column"
-          justifyContent={{ base: 'center', md: 'flex-start' }}
-          height="full"
-          width="full"
-          p={{ base: 0, sm: 10 }}
-        >
-          <TerminalView />
+          {!['base', 'sm'].includes(bp) && <AboutTerminal />}
         </Flex>
       </Box>
     </>
