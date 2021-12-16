@@ -42,6 +42,7 @@ export default function ResearchLayout({ item }: Props): ReactElement {
       </VStack>
 
       <object
+        id={'pdf'}
         data={item.pdf}
         type={item.pdf}
         style={{ height: '80vh', width: '96%', margin: '0 auto' }}
